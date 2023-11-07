@@ -9,7 +9,10 @@ result = 0
 # 한 줄씩 입력받기
 for i in range(N):
     data = list(map(int, input().split()))
-    min_data = min(data) # 현재 줄에서 가장 작은 수 찾기
-    result = max(result, min_data) # 행에 있는 가장 작은 수들 중 가장 큰 수 찾기
+    min_data = 10001
+    for a in data:
+        min_data = min(min_data, a)
+    
+    result = max(result, min_data)
 
 print(result) # 최종결과 출력
